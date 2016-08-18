@@ -10,13 +10,20 @@
   <ion-list>
     <!-- <ion-list-header>Follow us on Twitter</ion-list-header> -->
     <ion-item>
-      <ion-label >用户名</ion-label>
+      <ion-label stacked>用户名</ion-label>
       <ion-input  type="text" [(ngModel)]="user.username" ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>密码</ion-label>
+      <ion-label stacked>密码</ion-label>
       <ion-input type="password"  [(ngModel)]="user.password"></ion-input>
     </ion-item>
   </ion-list>
   <button block (click)="login()">登录</button>
+  <ion-row>
+    <ion-col>
+        <div class="textAliginRight">
+           <button outline (click)="register()" >还没有账号? 请注册</button>
+        </div>
+    </ion-col> 
+  </ion-row>
 </ion-content>
