@@ -1,6 +1,7 @@
 import {Component,ViewEncapsulation} from '@angular/core';
-import {ionicBootstrap,NavController,Loading,Alert,Toast,Modal} from 'ionic-angular';
+import {ionicBootstrap,NavController,Loading,Alert,Toast,Modal } from 'ionic-angular';
 import {HomePage} from '../home/home';
+import {RegisterPage} from '../register/register';
 @Component({
   templateUrl: 'build/pages/contact/contact.html'
 })
@@ -42,9 +43,9 @@ export class ContactPage {
     this.navCtrl.present(loading);
   }
   register(){
-  	console.log(Modal)
+ 
 
-      var modal = Modal.create(HomePage);	
+      var modal = Modal.create(RegisterPage);	
       this.navCtrl.present(modal);
   }
 }
