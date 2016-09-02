@@ -1,18 +1,20 @@
 <ion-header>
-  <ion-navbar dark>
-    <ion-title>Dark</ion-title>
+  <ion-navbar>
+    <ion-title>
+      用户中心
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
-
-<ion-header>
-  <ion-navbar danger>
-    <ion-title>Danger</ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-header>
-  <ion-navbar secondary>
-    <ion-title>Secondary</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of contacts" (click)="itemClick($event,item)">
+      <ion-avatar item-left>
+        <img width="50" height="50" src={{item.img}} />
+      </ion-avatar>
+       <h2>{{item.name}}</h2>
+       <p>{{item.phone}}</p>
+    </ion-item>
+      
+  </ion-list>
+</ion-content>

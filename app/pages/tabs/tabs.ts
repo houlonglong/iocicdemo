@@ -26,7 +26,7 @@ export class TabsPage {
   ionViewDidEnter(){
 
     // 注意版本 console.log(this.tabRef)
-    this.tabRef.select(2)
+    this.tabRef.select(0)
     
   }
 }

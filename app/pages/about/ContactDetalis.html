@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button (click)="dismiss()">
+          <span >取消</span>
+      </button>
+    </ion-buttons>
+    <ion-title>注册</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-card>
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="http://img4.imgtn.bdimg.com/it/u=3770651437,3387187747&fm=21&gp=0.jpg">
+    </ion-avatar>
+    <h2>{{item.name}}</h2>
+    <p>{{item.phone}}</p>
+  </ion-item>
+<ion-slides pager>
+
+  <ion-slide >
+  	  <img src="http://ionicframework.com/docs/v2/demos/slides/slide5.jpeg" class="slide-image"/>
+    <h2>Slide 1</h2>
+  </ion-slide>
+
+  <ion-slide >
+  <img src="http://ionicframework.com/docs/v2/demos/slides/slide5.jpeg" class="slide-image"/>
+    <h2>Slide 2</h2>
+  </ion-slide>
+
+  <ion-slide >
+   <img src="http://ionicframework.com/docs/v2/demos/slides/slide5.jpeg" class="slide-image"/>
+    <h2>Slide 3</h2>
+  </ion-slide>
+
+</ion-slides>
+
+  <ion-card-content>
+    <p>
+在 2014 年小微金服分享日上，支付宝钱包负责人、小微金服无线事业部总经理刘乐君公布了最新的数据：截止目前，支付宝钱包的活跃用户数已经达到 1.9 亿，日常移动支付日交易笔数超过 4500 万笔，在支付宝整体占比超过 50%，打破了 2013 年天猫双十一购物狂欢节当天支付宝创下的 4518 万笔的单日移动支付纪录。</p>
+  </ion-card-content>
+
+  <ion-row>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 赞</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button primary clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 转发</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11人 评论
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+
+
+
+</ion-content>
+
