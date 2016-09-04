@@ -23,16 +23,7 @@ export class Usercenter {
       }
   }
 
-  uploadImage(options){
-
-  	ImagePicker.getPictures(options).then((results) => {
-	  for (var i = 0; i < results.length; i++) {
-	  		this.user.touxiang =  results[i]
-	      console.log('Image URI: ' + results[i]);
-	  }
-	}, (err) => { });
-  	
-  }
+ 
    loginout(){
     var modal = Modal.create(ContactPage) 
              this.navCtrl.present(modal)
