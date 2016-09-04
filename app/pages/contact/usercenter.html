@@ -1,0 +1,13 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            用户中心
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="usercent">
+  <ion-avatar item-left>
+      <img (click)="uploadImage()" src= {{user.touxiang}}>
+    </ion-avatar>
+    <button block (click)="loginout()">注销</button>
+</ion-content>

@@ -1,6 +1,6 @@
 import {Component,ViewEncapsulation} from '@angular/core';
 import { ImagePicker } from 'ionic-native';
-import {ionicBootstrap,NavController,Loading,Alert,Toast,Modal } from 'ionic-angular';
+import {ionicBootstrap,NavController,Loading,Alert,Toast,Modal,ViewController } from 'ionic-angular';
 import {HomePage} from '../home/home';
 import {RegisterPage} from '../register/register';
 @Component({
@@ -10,13 +10,13 @@ export class ContactPage {
 	
     public user = {
     	username :'',
-    	password:'',
-    	touxiang:'http://img.mukewang.com/user/5405debb00014fd001800180-100-100.jpg'
+    	password:''
     }
-   
-
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController,
+  			  private ViewController:ViewController
+  	) {
   		this.navCtrl = navCtrl;
+  		this.ViewController = ViewController
   }
   login(){
   	if(this.user.username.length == 0){
@@ -34,28 +34,34 @@ export class ContactPage {
 		    
   		// })
   		 this.navCtrl.present(ToastUserNameError)
-  		  		return;
+  		return;
   	}
-  	let loading = Loading.create({
-      spinner: 'dots',
-      content: '正在登陆中...',
-      duration: 3000
-    });
+  	if(this.user.password == "123456"){
+  		
+  		localStorage["username"] =this.user.username
+  		localStorage["logined"] = true
+  		
+  		let loading = Loading.create({
+	      spinner: 'dots',
+	      content: '正在登陆中...',
+	      duration: 3000
+	    });
+	     this.navCtrl.present(loading);
+	    setTimeout(()=>{
+	    		
+			this.ViewController.dismiss()
+			loading.dismiss()	
 
-    this.navCtrl.present(loading);
+	 },0)
+
+	    
+  	}
+  	
+
+   
   }
   register(){
       var modal = Modal.create(RegisterPage);	
       this.navCtrl.present(modal);
-  }
-  uploadImage(options){
-
-  	ImagePicker.getPictures(options).then((results) => {
-	  for (var i = 0; i < results.length; i++) {
-	  		this.user.touxiang =  results[i]
-	      console.log('Image URI: ' + results[i]);
-	  }
-	}, (err) => { });
-  	
   }
 }

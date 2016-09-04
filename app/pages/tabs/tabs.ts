@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HomePage} from '../home/home';
 import {AboutPage} from '../about/about';
 import {ContactPage} from '../contact/contact';
+import {Usercenter} from '../contact/usercenter';
 //import {UserPage} from '../user/user';
 import {Tabs} from 'ionic-angular';
 import {Injectable,ViewChild} from '@angular/core';
@@ -20,13 +21,14 @@ export class TabsPage {
     // should be each tab's root Page
     this.tab1Root = HomePage;
     this.tab2Root = AboutPage;
-    this.tab3Root = ContactPage;
+    this.tab3Root = Usercenter;
+
     //this.tab4Root = UserPage;
   }
   ionViewDidEnter(){
 
     // 注意版本 console.log(this.tabRef)
-    this.tabRef.select(2)
+    //this.tabRef.select(2)
     
   }
 }
