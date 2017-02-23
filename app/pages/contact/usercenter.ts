@@ -8,7 +8,7 @@ import {ContactPage} from './contact';
 })
 export class Usercenter {	
 	user = {
-     'touxiang':'http://img.mukewang.com/user/5405debb00014fd001800180-100-100.jpg'
+     'touxiang':'../../img/'+localStorage['username']+'.jpg'
   };
 
     
@@ -16,17 +16,27 @@ export class Usercenter {
    private ViewController:ViewController) {
   		this.navCtrl = navCtrl
       this.ViewController = ViewController
-      let logined = localStorage['logined']
-      if(logined !== 'true'){
-        var modal = Modal.create(ContactPage) 
-             this.navCtrl.present(modal)
+     
+      let username = localStorage['username']
+      if(localStorage['logined'] == 'true'){
+          this.user.touxiang =  '../../img/'+localStorage['username']+'.jpg'
       }
+       let modal = Modal.create(ContactPage)
+           modal.onDismiss(data=>{
+                this.user.touxiang = '../../img/'+localStorage['username']+'.jpg'
+           }) 
+           this.navCtrl.present(modal)
   }
 
  
    loginout(){
-    var modal = Modal.create(ContactPage) 
-             this.navCtrl.present(modal)
+    localStorage.clear()
+    var modal = Modal.create(ContactPage)
+    this.navCtrl.present(modal)
+    modal.onDismiss(data=>{
+      this.user.touxiang = '../../img/'+ localStorage['username']+'.jpg'
+    })  
+   
 
   }
 
